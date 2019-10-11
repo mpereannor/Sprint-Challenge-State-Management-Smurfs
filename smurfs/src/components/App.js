@@ -1,26 +1,28 @@
-import React, { Component } from "react";
-import ReactDOM from 'react-dom';
-import { combineReducers, createStore } from 'redux';
-import { Provider } from 'react-redux';
-import * as reducers from '../state/reducers';
+import React, { useEffect } from "react";
 import {connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
+import SmurfProfile from './SmurfProfile';
 
 
 import "./App.css";
-export class App extends Component {
-  render() {
-    const {smurfs, getSmurfs, addSmurfs, getAllSmurfs} =this.props;
-    return (
-      <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <h1>{smurfs.name}</h1>
-        <div>Welcome to your state management version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun</div>
-      </div>
-    );
-  }
+export function App ({smurfs, getSmurfs, addSmurfs, getAllSmurfs} ) {
+
+  useEffect(() => {
+    getAllSmurfs();
+  },[])
+    
+  return (
+    <div className="App">
+      <h1>SMURFS! 2.0 W/ Redux</h1>
+      <h1>
+      {smurfs.map(profile => (
+      <SmurfProfile profile={profile}/>))}</h1>
+      <div>Welcome to your state management version of Smurfs!</div>
+      <div>Start inside of your `src/index.js` file!</div>
+      <div>Have fun</div>
+    </div>
+  );
+
 }
 
 export default connect (
