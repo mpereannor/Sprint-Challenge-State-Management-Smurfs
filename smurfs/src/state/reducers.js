@@ -12,15 +12,6 @@ export function smurfListReducer(state = initialSmurfList, action){
     }
 }
 
-// const initialSmurf = [
-//     {
-//         "name": "Brainey",
-//         "age": 200,
-//         "height": "5cm",
-//         "id": 0
-//     }
-// ];
-
 const initialState = {
     smurfs: []
 }
@@ -31,7 +22,7 @@ export function smurfReducer (state = initialState, action
         case types.GET_SMURFS:
             return {
                 ...state,
-                smurfs: action.payload,
+                state: action.payload,
                 }; 
         
         default:

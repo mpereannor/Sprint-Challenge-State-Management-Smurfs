@@ -8,15 +8,12 @@ import { combineReducers, createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 
-// create a combined reducer (4)
 const monsterReducer = combineReducers({
 
     smurfs: reducers.smurfReducer,
     list: reducers.smurfListReducer
   });
 
-
-// feed the createStore the combined reducer (5)
 const store = createStore(
     monsterReducer,
     {},
@@ -26,10 +23,8 @@ const store = createStore(
     ),
   );
 ReactDOM.render(
-// inject the store into the provider (6)
 <Provider store={store}>
     <App />
 </Provider>
 , document.getElementById("root"));
 
-//make new component Surf where w
