@@ -9,9 +9,7 @@ import { Provider } from 'react-redux';
 
 
 const monsterReducer = combineReducers({
-
     smurfs: reducers.smurfReducer,
-    list: reducers.smurfListReducer
   });
 
 const store = createStore(
@@ -22,6 +20,7 @@ const store = createStore(
       window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     ),
   );
+
 ReactDOM.render(
 <Provider store={store}>
     <App />
