@@ -17,33 +17,13 @@ export const getSmurfs = () => dispatch => {
     });
 }
 
-// export const addSmurf = smurf => dispatch = {
-//     axios.post(smurfApi, smurf)
-//     .then(response => {
-//         dispatch({type: types.GET_SMURFS_SUCCESS, payload: response.data});
-//     })
-//     .catch(error => {
-//         console.log(error)
-//     });
-// };
-//previous method used on friday
-/*
-export function getSmurfs(smurfs) {
-    return {
 
-        type: types.GET_SMURFS,
-        payload: smurfs
-    }
-};
-
-export const getAllSmurfs = () => dispatch => {
-    debugger
-    axios.get(smurfApi)
-    .then(response => {
-        
-        const smurfs = response.data;
-        dispatch(getSmurfs(smurfs))
+export const addSmurf = smurf => dispatch => {
+ axios.post(smurfApi, smurf)
+.then(response => {
+        dispatch({type: types.GET_SMURFS_SUCCESS, payload: response.data});
+    })
+    .catch(error => {
+        console.log(error)
     });
-};
-
-*/
+}

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import {connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
 import SmurfProfile from './SmurfProfile';
+import SmurfsForm from "./SmurfsForm";
 import "./App.css";
 
 function App ({smurfs, error, fetchSmurfs, getSmurfs}) {
@@ -19,6 +20,7 @@ function App ({smurfs, error, fetchSmurfs, getSmurfs}) {
       {smurfs.map(smurf => (
           <SmurfProfile key= {smurf.id} smurf={smurf} />
         ))}
+      <SmurfsForm/>
      
       </div>
 
