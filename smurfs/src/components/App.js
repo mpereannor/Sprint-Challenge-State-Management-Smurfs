@@ -5,7 +5,7 @@ import SmurfProfile from './SmurfProfile';
 import SmurfsForm from "./SmurfsForm";
 import "./App.css";
 
-function App ({smurfs, error, fetchSmurfs, getSmurfs}) {
+export function App ({smurfs, error, fetchSmurfs, getSmurfs}) {
 
   useEffect(() => {
     getSmurfs()
@@ -41,3 +41,4 @@ export default connect (
 
 //notes typeof smurfs === 'array' && 
 // this connotes to if typeof smurfs is equal to an array then execute
+
