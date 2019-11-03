@@ -1,0 +1,9 @@
+// export const ADD_SMURFS = 'ADD_SMURFS';
+
+export const GET_SMURFS = 'GET_SMURFS';
+
+export const GET_SMURFS_SUCCESS = 'GET_SMURFS_SUCCESS';
+
+export const GET_SMURFS_FAILURE = 'GET_SMURFS_FAILURE';
+
+export const ADD_SMURFS_SUCCESS = 'ADD_SMURFS_SUCCESS'

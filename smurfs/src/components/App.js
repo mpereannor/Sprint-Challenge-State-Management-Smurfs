@@ -1,16 +1,44 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
+import {connect } from 'react-redux';
+import * as actionCreators from '../state/actionCreators';
+import SmurfProfile from './SmurfProfile';
+import SmurfsForm from "./SmurfsForm";
 import "./App.css";
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your state management version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
+
+export function App ({smurfs, error, fetchSmurfs, getSmurfs}) {
+
+  useEffect(() => {
+    getSmurfs()
+  },[])
+  console.log('error', error,)
+  console.log( 'fetch' , fetchSmurfs)
+
+  return (
+    <div className="App">
+
+      <div>
+      {smurfs.map(smurf => (
+          <SmurfProfile key= {smurf.id} smurf={smurf} />
+        ))}
+      <SmurfsForm/>
+     
       </div>
-    );
-  }
+
+    </div>
+  );
 }
 
-export default App;
+export default connect (
+  state => state.smurfs,
+  actionCreators
+) (App);
+
+
+
+
+
+
+
+//notes typeof smurfs === 'array' && 
+// this connotes to if typeof smurfs is equal to an array then execute
+

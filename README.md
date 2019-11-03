@@ -23,9 +23,37 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+
+One familiar problem in React is what is popularly known as prop drilling.
+
+Prop drilling occurs in situations where you’re looking to get the state from the top of your react tree to the bottom and you end up passing props through components that do not necessarily need them.
+
+Context  API solves the problem of props drilling. It allows you to share props or state with an indirect child or parent.
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+`actions` serve as the only source of information for the store
+
+`reducers` are pure functions that accept the previous state of app and action being dispatched, calculate the next state and returns the new object
+
+`store`is a state container which holds the application’s state
+
+Single source of truth implies the state of your whole application is stored in an object tree within a single store.
+
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state is global, and your component state is local. Redux, uses `store` to hold application state. That means any component, anywhere in the app can access it.
+
+Component state however, lives within that specific component. As such, it can only be updated within that component and passed down to its children via props.
+
+Application state is useful in gigantic complex apps where we have complex interactive components.
+
+Component state is preferable when a component  is not interactive within a net of components.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
 
 ## Project Set Up
